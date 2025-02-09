@@ -6,6 +6,11 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 4000
 
+const githubdata = {
+    "name": "Rajat",
+    "age": 28
+}
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -16,6 +21,10 @@ app.get('/twitter', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.send('<h1>Login at ChaiAurCode.</h1>')
+})
+
+app.get('/github', (req, res) => {
+    res.json(githubdata)
 })
 
 // app.listen(port, () => {
